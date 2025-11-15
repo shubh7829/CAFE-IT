@@ -1,0 +1,133 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 38 30% 96%;
+    --foreground: 38 10% 10%;
+
+    --card: 38 30% 99%;
+    --card-foreground: 38 10% 10%;
+
+    --popover: 38 30% 99%;
+    --popover-foreground: 38 10% 10%;
+
+    --primary: 35 33% 68%;
+    --primary-foreground: 38 100% 99%;
+
+    --secondary: 38 33% 92%;
+    --secondary-foreground: 38 10% 20%;
+
+    --muted: 38 20% 92%;
+    --muted-foreground: 38 5% 45%;
+
+    --accent: 38 70% 45%;
+    --accent-foreground: 38 100% 99%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 38 100% 99%;
+
+    --border: 38 25% 85%;
+    --input: 38 25% 85%;
+    --ring: 35 33% 68%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 38 30% 96%;
+    --sidebar-foreground: 38 10% 25%;
+    --sidebar-primary: 38 33% 68%;
+    --sidebar-primary-foreground: 38 100% 99%;
+    --sidebar-accent: 38 33% 88%;
+    --sidebar-accent-foreground: 38 10% 10%;
+    --sidebar-border: 38 25% 85%;
+    --sidebar-ring: 35 33% 68%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-cafeit-beige-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-cafeit-beige-400;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20 shadow-lg;
+  }
+  
+  .nav-link {
+    @apply relative px-3 py-1.5 text-cafeit-beige-900 font-medium transition-colors hover:text-cafeit-accent-terracotta after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-cafeit-accent-terracotta after:transition-all hover:after:w-full;
+  }
+  
+  .btn-primary {
+    @apply bg-cafeit-accent-terracotta text-white px-4 py-2 rounded-full font-medium transition-all duration-300 hover:shadow-md hover:shadow-cafeit-accent-terracotta/20 hover:translate-y-[-2px] active:translate-y-0 active:shadow-none;
+  }
+
+  .btn-secondary {
+    @apply bg-cafeit-beige-100 text-cafeit-beige-900 px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-cafeit-beige-200 hover:shadow-sm active:bg-cafeit-beige-200;
+  }
+
+  .btn-outline {
+    @apply border border-cafeit-beige-300 text-cafeit-beige-900 px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-cafeit-beige-100 hover:border-cafeit-beige-400 active:bg-cafeit-beige-200;
+  }
+
+  .feature-card {
+    @apply rounded-2xl p-6 bg-white shadow-md border border-cafeit-beige-100 transition-all duration-300 hover:shadow-lg hover:border-cafeit-beige-200;
+  }
+
+  .input-field {
+    @apply bg-white border border-cafeit-beige-200 rounded-lg px-4 py-2 outline-none focus:border-cafeit-accent-terracotta focus:ring-1 focus:ring-cafeit-accent-terracotta/20 transition-all duration-300;
+  }
+}
+
+/* Animations and transitions */
+@layer utilities {
+  .transition-all-ease {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+}
